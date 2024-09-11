@@ -120,26 +120,32 @@ var instructions = {
 timeline.push(instructions);
 
 var instructions_2 = {
-  type: jsPsychImageButtonResponse,
-  stimulus: 'stim/stim_example.png',
-  stimulus_width: 800,
-  prompt: "You will see four animals sitting on the benches of this park. Try and remember where they were sitting!",
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `<p>In this game, you will see animals sitting on the benches in the park.
+  Each day, the animals may sit in different places.</p>
+  <p>Try and remember where they were sitting!</p>
+  
+  <img src="stim/stim_example.png" width="800">,
+  `,
   choices: ["Next"]
 }
 timeline.push(instructions_2);
 
 var instructions_3 = {
-  type: jsPsychImageButtonResponse,
-  stimulus: 'stim/response_example.png',
-  stimulus_width: 800,
-  prompt: "The animals will leave. Click on the animal you think was sitting where the bright white box is.",
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `<p>The animals will head home. Can you remember which animal was sitting in the bright white box?</p>
+  <p>Touch which animal you think it was. A bright tone means you got it right! A sad tone means you got it wrong.</p>
+  
+  <img src="stim/response_example.png" width="800">
+  `,
+
   choices: ["Next"]
 }
 timeline.push(instructions_3);
 
 var instructions_4 = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: 'Are you ready?',
+  stimulus: '<p>Are you ready?</p><br>',
   choices: ["YES!"]
 }
 timeline.push(instructions_4);
