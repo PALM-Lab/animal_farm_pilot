@@ -39,9 +39,9 @@ let n_animals = 8 // how many animals
 let n_pairs = n_animals / 2 // how many pairs
 let n_trials = 100 // *maximum* number of trials
 
-let fixation_time = 250 // time of fixation
-let stim_time = 1000 // stim presentation in msec
-let retention_time = 250 // blank interval after stimulus in msec
+let fixation_time = 500 // time of fixation
+let stim_time = 1500 // stim presentation in msec
+let retention_time = 500 // blank interval after stimulus in msec
 
 let canvas_width = 1100 // sets canvas width
 let canvas_height = 520 // sets canvas height
@@ -89,7 +89,7 @@ timeline.push(enter_fullscreen);
 /* preload images */
 var preload = {
   type: jsPsychPreload,
-  images: [animals, background],
+  images: [animals, background, "stim/response_example.png", "stim/stim_example.png"],
   audio: ["sound/correct.mp3", "sound/incorrect.mp3"],
   message: "Loading...",
   max_load_time: 60000,
@@ -118,6 +118,31 @@ var instructions = {
   post_trial_gap: stim_time
 };
 timeline.push(instructions);
+
+var instructions_2 = {
+  type: jsPsychImageButtonResponse,
+  stimulus: 'stim/stim_example.png',
+  stimulus_width: 800,
+  prompt: "You will see four animals sitting on the benches of this park. Try and remember where they were sitting!",
+  choices: ["Next"]
+}
+timeline.push(instructions_2);
+
+var instructions_3 = {
+  type: jsPsychImageButtonResponse,
+  stimulus: 'stim/response_example.png',
+  stimulus_width: 800,
+  prompt: "The animals will leave. Click on the animal you think was sitting where the bright white box is.",
+  choices: ["Next"]
+}
+timeline.push(instructions_3);
+
+var instructions_4 = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Are you ready?',
+  choices: ["YES!"]
+}
+timeline.push(instructions_4);
 
 /* define fixation and test trials */
 
@@ -338,6 +363,7 @@ var close_fullscreen = {
 }
 
 timeline.push(close_fullscreen)
+timeline.push(end_experiment)
 
 /* start the experiment */
 jsPsych.run(timeline);
