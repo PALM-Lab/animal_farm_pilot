@@ -43,7 +43,7 @@ let fixation_time = 500 // time of fixation
 let stim_time = 1500 // stim presentation in msec
 let retention_time = 500 // blank interval after stimulus in msec
 
-let canvas_width = 1050 // sets canvas width
+let canvas_width = 1000 // sets canvas width
 let canvas_height = 470 // sets canvas height
 let canvas_offset_diff = 108 // change when adding response buttons below
 
@@ -167,7 +167,7 @@ var stim = {
   type: jsPsychCanvasButtonResponse,
   stimulus: draw_stimulus,
   choices: ['x'],
-  button_html: '<button class="jspsych-btn" style = "position:absolute; left:0px; top: 0px">%choice%</button>',
+  button_html: '<button class="jspsych-btn" style = "position:absolute; left:10px; top: 0px">%choice%</button>',
   trial_duration: stim_time,
   canvas_size: [canvas_height + canvas_offset_diff, canvas_width], // height x width
   on_finish: function (data) {
@@ -239,7 +239,7 @@ var trial = {
   button_html: '<img src=%choice% width="100" height="100"></img>',
   choices: animals,
   canvas_size: [canvas_height, canvas_width],
-  margin_horizontal: "15px",
+  margin_horizontal: "10px",
   on_start: function (data) {
     var trial_animals = []
     trial_animals = jsPsych.data.getLastTrialData().values()[0].animals
