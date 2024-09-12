@@ -49,10 +49,10 @@ let canvas_offset_diff = 108 // change when adding response buttons below
 
 let item_size = 100
 let item_locs = [
-  [canvas_width / 2 + item_size * -3.5, canvas_height / 2],
-  [canvas_width / 2 + item_size * -2.5, canvas_height / 2],
-  [canvas_width / 2 + item_size * 2, canvas_height / 2],
-  [canvas_width / 2 + item_size * 3, canvas_height / 2]
+  [canvas_width / 2 + item_size * -3.4, canvas_height / 2 + 20],
+  [canvas_width / 2 + item_size * -2.4, canvas_height / 2 + 20],
+  [canvas_width / 2 + item_size * 1.9, canvas_height / 2 + 20],
+  [canvas_width / 2 + item_size * 2.9, canvas_height / 2 + 20]
 ]; // draws from the top-left
 
 // RANDOMIZATION
