@@ -43,8 +43,8 @@ let fixation_time = 500 // time of fixation
 let stim_time = 1500 // stim presentation in msec
 let retention_time = 500 // blank interval after stimulus in msec
 
-let canvas_width = 1100 // sets canvas width
-let canvas_height = 520 // sets canvas height
+let canvas_width = 1050 // sets canvas width
+let canvas_height = 470 // sets canvas height
 let canvas_offset_diff = 108 // change when adding response buttons below
 
 let item_size = 100
@@ -100,7 +100,7 @@ timeline.push(preload);
 var welcome = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-    <p>Welcome to the experiment.</p>
+    <p>Welcome to the experiment!</p>
     <br>
   `,
   choices: [">>"]
