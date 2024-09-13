@@ -167,7 +167,7 @@ var stim = {
   type: jsPsychCanvasButtonResponse,
   stimulus: draw_stimulus,
   choices: ['x'],
-  button_html: '<button class="jspsych-btn" style = "position:absolute; left:10px; top: 0px">%choice%</button>',
+  button_html: '<button class="jspsych-btn" style = "position:absolute; right:10px; top: 0px">%choice%</button>',
   trial_duration: stim_time,
   canvas_size: [canvas_height + canvas_offset_diff, canvas_width], // height x width
   on_finish: function (data) {
@@ -208,7 +208,7 @@ var filler = {
   type: jsPsychCanvasButtonResponse,
   stimulus: draw_filler,
   choices: ['x'],
-  button_html: '<button class="jspsych-btn" style = "position:absolute; left:0px; top: 0px">%choice%</button>',
+  button_html: '<button class="jspsych-btn" style = "position:absolute; right: 10px; top: 0px">%choice%</button>',
   trial_duration: retention_time,
   canvas_size: [canvas_height + canvas_offset_diff, canvas_width], // height x width
   on_finish: function (data) {
